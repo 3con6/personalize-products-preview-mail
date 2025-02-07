@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    image: registry.gitlab.com/nb-team/new-onedrive-mail:v1
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"  

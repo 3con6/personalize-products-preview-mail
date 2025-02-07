@@ -1,0 +1,30 @@
+Get Token Json OneDrive
+
+
+
+Step 1: Visit the following link:
+
+https://login.live.com/oauth20_authorize.srf?client_id={client_id}&scope=onedrive.readwrite,offline_access&response_type=code
+
+Step 2: After accessing the link, it will redirect to:
+
+https://login.microsoftonline.com/common/oauth2/nativeclient?code=xxxxxxx
+
+Step 3: Extract the code after code= from the URL.
+
+Step 4: Send a POST request to the following link:
+
+https://login.live.com/oauth20_token.srf
+
+Step 5: Include the following payload in your POST request:
+
+client_id={client_id}&code={extracted_code}&grant_type=authorization_code
+
+Get Token Json Google DriveDrive
+
+
+
+An easier way is to go here and follow the instructions: https://developers.google.com/drive/api/v3/quickstart/python
+
+Google will automatically create an API with OAuth authentication and a JSON file for you, so you don't have to do the complicated setup.
+
